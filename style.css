@@ -1,0 +1,119 @@
+:root {
+    --primary-color: #00f2ff;
+    --bg-color: #0a0b10;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--bg-color);
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at top right, #1a1b25, #0a0b10);
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.logo span { color: white; }
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--card-bg);
+    color: white;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary-color);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--primary-color); }
+
+.weather-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.ad-space {
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(255,255,255,0.2);
+    font-size: 12px;
+    color: #555;
+}
+
+.geo-button {
+    width: 100%;
+    margin-bottom: 20px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* أضف هذا الكود في نهاية ملف style.css */
+
+/* خلفيات الكارت المتحركة */
+.weather-card.clear { background: radial-gradient(circle, #ffe082, #ffb300); } /* شمس */
+.weather-card.clouds { background: radial-gradient(circle, #bdc3c7, #2c3e50); } /* غيوم */
+.weather-card.rain { background: radial-gradient(circle, #3498db, #2980b9); } /* مطر */
+.weather-card.thunderstorm { background: radial-gradient(circle, #9b59b6, #8e44ad); } /* رعد */
+.weather-card.snow { background: radial-gradient(circle, #ecf0f1, #bdc3c7); } /* ثلج */
+
+/* الأيقونات المتحركة (باستخدام CSS و FontAwesome) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+.weather-icon {
+    font-size: 5rem;
+    margin: 20px 0;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+.clear::before { content: '\f185'; color: #ffb300; animation: rotate 10s linear infinite; } /* شمس */
+.clouds::before { content: '\f0c2'; color: #bdc3c7; } /* غيوم */
+.rain::before { content: '\f73d'; color: #3498db; } /* مطر */
+.thunderstorm::before { content: '\f76c'; color: #9b59b6; } /* رعد */
+.snow::before { content: '\f2dc'; color: #ecf0f1; } /* ثلج */
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }
